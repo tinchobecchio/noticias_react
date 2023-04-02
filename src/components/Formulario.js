@@ -15,9 +15,6 @@ const Formulario = ({guardarCategoria}) => {
     // Inicializamos el custom hook con general como stateInicial y el array de opciones para el select. Extraemos categoria que es el state y SelectNoticias que es la interfaz que nos devuelve
     const [ categoria, SelectNoticias] = useSelect('general', OPCIONES)
 
-    const APIKey = 'f29d0439d0094b0ab3bbdcc523835459'
-    
-
     // submit al for, pasar categoria a app.js
     const buscarNoticias = e => {
         e.preventDefault()
