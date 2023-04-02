@@ -3,11 +3,19 @@ import useSelect from '../hooks/useSelect';
 
 const Formulario = () => {
 
-    const [ categoria, SelectNoticias] = useSelect()
+    const OPCIONES = [
+        { value: 'general', label: 'General'},
+        { value: 'technology', label: 'Tecnología'},
+        { value: 'sports', label: 'Deportes'},
+        { value: 'science', label: 'Ciencia'},
+        { value: 'health', label: 'Salud'},
+        { value: 'entertainment', label: 'Entretenimiento'},
+        { value: 'business', label: 'Negocios'}
+    ]
+    const [ categoria, SelectNoticias] = useSelect('general', OPCIONES)
 
-
-
-
+    const APIKey = 'f29d0439d0094b0ab3bbdcc523835459'
+    
 
     return (
         <div className={`${styles.buscador} row`}>
