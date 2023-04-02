@@ -7,19 +7,19 @@ import ListadoNoticias from "./components/ListadoNoticias";
 function App() {
 
   // definir la categoria y noticias
-  const [ categoria, guardarCategoria ] = useState('')
+  const [ categoria, guardarCategoria ] = useState('entertainment')
   const [ noticias, guardarNoticias] = useState([])
 
   useEffect(() => {
 
     const consultarAPI = async () => {
-      const APIKey = 'f29d0439d0094b0ab3bbdcc523835459'
-      const url = `https://newsapi.org/v2/top-headlines?country=us&category=${categoria}&apiKey=${APIKey}`
+      const APIKey = 'pub_199339a6bf25d5353293fc4a1903c80740300'
+      const url = `https://newsdata.io/api/1/news?apikey=${APIKey}&country=ar&category=${categoria}`
 
       const respuesta = await fetch(url)
       const noticias = await respuesta.json()
 
-      guardarNoticias(noticias.articles);
+      guardarNoticias(noticias.results);
 
     }
     consultarAPI()
@@ -28,7 +28,7 @@ function App() {
   return (
     <>
       <Header 
-        titulo="Buscador de Noticias"
+        titulo="Noticiero"
       />
       <div className="container white">
         <Formulario 

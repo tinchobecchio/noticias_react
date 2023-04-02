@@ -5,7 +5,7 @@ const ListadoNoticias = ({noticias}) => (
     <div className="row">
         {noticias.map( noticia => (
             <Noticia 
-                key={noticia.url}
+                key={noticia.link}
                 noticia={noticia}
             />
             

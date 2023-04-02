@@ -2,13 +2,13 @@ import PropTypes from 'prop-types';
 
 const Noticia = ({noticia}) => {
     // extraer los datos
-    const {urlToImage, url, title, description, source} = noticia
+    const {image_url, link, title, description, source_id} = noticia
 
-    const imagen = (urlToImage)
+    const imagen = (image_url)
     ?
         <div className="card-image">
-            <img src={urlToImage} alt={title}/>
-            <span className="card-title">{source.name}</span>
+            <img src={image_url} alt={title}/>
+            <span className="card-title">{source_id}</span>
         </div>
     : null
 
@@ -23,7 +23,7 @@ const Noticia = ({noticia}) => {
                 </div>
                 <div className="card-action">
                     <a 
-                        href={url}
+                        href={link}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="waves-effect waves-light btn"                    

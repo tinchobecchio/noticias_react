@@ -5,16 +5,17 @@ import PropTypes from 'prop-types';
 const Formulario = ({guardarCategoria}) => {
 
     const OPCIONES = [
-        { value: 'general', label: 'General'},
+        { value: 'world', label: 'Mundo'},
         { value: 'technology', label: 'Tecnología'},
         { value: 'sports', label: 'Deportes'},
         { value: 'science', label: 'Ciencia'},
-        { value: 'health', label: 'Salud'},
         { value: 'entertainment', label: 'Entretenimiento'},
-        { value: 'business', label: 'Negocios'}
+        { value: 'business', label: 'Negocios'},
+        { value: 'politics', label: 'Política'},
+        { value: 'top', label: 'Top'}
     ]
     // Inicializamos el custom hook con general como stateInicial y el array de opciones para el select. Extraemos categoria que es el state y SelectNoticias que es la interfaz que nos devuelve
-    const [ categoria, SelectNoticias] = useSelect('general', OPCIONES)
+    const [ categoria, SelectNoticias] = useSelect('entertainment', OPCIONES)
 
     // submit al for, pasar categoria a app.js
     const buscarNoticias = e => {
